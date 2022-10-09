@@ -1,0 +1,96 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 400,
+  "title": "Share of Global Food Emissions",
+  "data": {
+    "url": "https://raw.githubusercontent.com/LesinTeohMonash/3179/main/share-global-food-emissions.csv"
+  },
+  "transform": [{"filter": "datum.Share > 0"}],
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "quantitative",
+      "title": "Year",
+      "scale": {"domain": [1988, 2017]}
+    },
+    "y": {
+      "field": "Share",
+      "type": "quantitative",
+      "title": "Global Food Emissions"
+    }
+  },
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "continent_highlight",
+          "select": {"type": "point", "fields": ["continent"]},
+          "bind": "legend"
+        },
+        {
+          "name": "Year_Selection",
+          "value": 1988,
+          "bind": {
+            "input": "range",
+            "min": 1988,
+            "max": 2016,
+            "name": "Year Seletion: "
+          }
+        }
+      ],
+      "mark": "circle",
+      "encoding": {
+        "size": {
+          "field": "Share",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [3, 6, 9, 12, 15],
+            "range": [10, 50, 150, 200, 300, 400]
+          }
+        },
+        "color": {
+          "field": "continent",
+          "type": "nominal",
+          "title": "Continent"
+        },
+        "opacity": {
+          "condition": {"param": "continent_highlight", "value": 0.8},
+          "value": 0.2
+        },
+        "tooltip": [
+          {"field": "Entity", "type": "nominal"},
+          {"field": "Year", "type": "quantitative", "format": ","},
+          {"field": "Share", "type": "quantitative", "format": ","},
+          {"field": "continent", "type": "nominal"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Entity", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {"test": "datum['Entity'] == 'China'", "value": 1},
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Entity", "type": "nominal"},
+          {"field": "Year", "type": "quantitative", "format": ","},
+          {"field": "Share", "type": "quantitative", "format": ","},
+          {"field": "continent", "type": "nominal"}
+        ]
+      }
+    }
+  ],
+  "config": {}
+}
