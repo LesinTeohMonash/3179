@@ -1,0 +1,35 @@
+.class-heading {
+    color : rgb(72, 72, 212);
+}
+
+.class-paragraph {
+    color : rgb(0, 0, 62);
+}
+
+h1 {
+    font-family: 'Fondamento', cursive;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+}
+
+.share_text{
+    color:rgb(23, 182, 23)
+}
+
+.visualization{
+    height: 20%;
+}
+
+.pure-graph {
+    margin-bottom: 20px;
+}
+
+.right {
+    padding-left: 700px;
+}
