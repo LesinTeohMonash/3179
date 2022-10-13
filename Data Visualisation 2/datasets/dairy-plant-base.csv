@@ -1,6 +1,7 @@
-Type of Milk,Year,Land use of milks (m2),GHG emissions of milks (kg CO2eq),Water use of milks (L),Eutrophication from milks (g PO43-eq)
-Almond milk,2013,0.496359329,0.702077383,371.4593343,1.50290777
-Dairy milk,2013,8.95,3.15,628.2,10.65
-Oat milk,2013,0.76,0.903126194,48.24,1.622562983
-Rice milk,2013,0.336,1.181659182,269.808,4.69270482
-Soy milk,2013,0.66,0.98,27.8,1.06
+Type of Milk,Year,Land use of milks (m2),Land Rank,Land %,GHG emissions of milks (kg CO2eq),GHG Rank,GHG %,Water use of milks (L),Water Rank,Water %,Eutrophication from milks (g PO43-eq),Eutrophication Rank,Eutrophication %,Total Rank,Final Rank,Total %,
+Almond milk,2013,0.496359329,4,4%,0.702077383,5,10%,371.4593343,2,28%,1.50290777,4,8%,15,4,12%,
+Dairy milk,2013,8.95,1,80%,3.15,1,46%,628.2,1,47%,10.65,1,55%,4,1,57%,
+Oat milk,2013,0.76,2,7%,0.903126194,4,13%,48.24,4,4%,1.622562983,3,8%,13,3,8%,
+Rice milk,2013,0.336,5,3%,1.181659182,2,17%,269.808,3,20%,4.69270482,2,24%,12,2,16%,
+Soy milk,2013,0.66,3,6%,0.98,3,14%,27.8,5,2%,1.06,5,5%,16,5,7%,
+,,,,,,,,,,,,,,,,,
