@@ -106,7 +106,15 @@
       "type": "quantitative",
       "title": "Water used by Food"
     },
-    "y": {"field": "Food", "type": "nominal", "sort": "-x"},
+    "y": {
+      "field": "Food", 
+      "type": "nominal",
+      "sort": {
+        "op": "sum",
+        "field": "Freshwater withdrawals per kilogram (Poore & Nemecek, 2018)",
+        "order": "descending"
+      }
+    },
     "tooltip": [
       {"field": "Food", "type": "nominal"},
       {

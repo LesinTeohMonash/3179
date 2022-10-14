@@ -106,7 +106,15 @@
       "type": "quantitative",
       "title": "GHG Emission to the Environment"
     },
-    "y": {"field": "Food", "type": "nominal", "sort": "-x"},
+    "y": {
+      "field": "Food", 
+      "type": "nominal",
+      "sort": {
+        "op": "sum",
+        "field": "GHG emissions per kilogram (Poore & Nemecek, 2018)",
+        "order": "descending"
+      }
+    },
     "tooltip": [
       {"field": "Food", "type": "nominal"},
       {
